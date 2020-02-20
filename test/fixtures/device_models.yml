@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mark: MyString
+  modelName: MyString
+  modelCode: MyString
+  slotSIM: MyString
+  band: MyString
+  osMax: MyString
+  specsLink: MyString
+  ramSize: 1
+  romSize: 1
+  cpuFreqMax: 1.5
+  cores: 1
+  screenResolution: MyString
+  screenSize: 1.5
+  mainCam: 1
+  secCam: 1
+  battery: 1
+  usbType: MyString
+  announced: 
+
+two:
+  mark: MyString
+  modelName: MyString
+  modelCode: MyString
+  slotSIM: MyString
+  band: MyString
+  osMax: MyString
+  specsLink: MyString
+  ramSize: 1
+  romSize: 1
+  cpuFreqMax: 1.5
+  cores: 1
+  screenResolution: MyString
+  screenSize: 1.5
+  mainCam: 1
+  secCam: 1
+  battery: 1
+  usbType: MyString
+  announced: 

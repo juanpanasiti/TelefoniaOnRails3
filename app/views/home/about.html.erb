@@ -1,2 +1,55 @@
 <h1>Home#about</h1>
 <p>Find me in app/views/home/about.html.erb</p>
+<table class="table">
+  <thead>
+    <th>Entidad</th>
+    <th>Cant.Regs.</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Admin</td>
+      <td><%= Admin.all.count %></td>
+    </tr>
+    <tr>
+      <td>Account</td>
+      <td><%= Account.all.count %></td>
+    </tr>
+    <tr>
+      <td>Plan</td>
+      <td><%= Plan.all.count %></td>
+    </tr>
+    <tr>
+      <td>Office</td>
+      <td><%= Office.all.count %></td>
+    </tr>
+    <tr>
+      <td>DeviceModel</td>
+      <td><%= DeviceModel.all.count %></td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td><%= User.all.count %></td>
+    </tr>
+    <tr>
+      <td>CsvReportLine</td>
+      <td><%= CsvReportLine.all.count %></td>
+    </tr>
+    <tr>
+      <td>Line</td>
+      <td><%= Line.all.count %></td>
+    </tr>
+    <tr>
+      <td>MailAccount</td>
+      <td><%= MailAccount.all.count %></td>
+    </tr>
+    <tr>
+      <td>Device</td>
+      <td><%= Device.all.count %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<%= link_to "Vover al index", root_path %>

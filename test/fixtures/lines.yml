@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  user: one
+  status: MyString
+  account: one
+  lastCheck: 
+  plan: one
+  sim: MyString
+  details: MyText
+
+two:
+  number: MyString
+  user: two
+  status: MyString
+  account: two
+  lastCheck: 
+  plan: two
+  sim: MyString
+  details: MyText
