@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :devices
+  get 'adminzone/index'
   devise_for :admins
   root 'home#index'
   get 'home/about'
