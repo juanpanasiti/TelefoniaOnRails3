@@ -1,0 +1,63 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Formulario de equipos</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <%= form_with(model: device, url:devices_path, method:"post") do |dev| %>
+
+    <% if device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(device.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+        <% device.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <%= dev.label :device_model_id, "Modelo" %>
+          <%= dev.select :device_model_id, options_for_select(@models_options), {}, {class:"form-control"} %>
+        </div>
+
+        <div class="form-group">
+          <%= dev.label :imei, "IMEI" %>
+          <%= dev.text_field :imei, class:"form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= dev.label :line_id, "Línea" %>
+          <%= dev.select :line_id, options_for_select(@lines_options), {}, {class:"form-control"} %>
+        </div>
+
+        <div class="form-group">
+          <%= dev.label :status, "Estado" %>
+          <%= dev.select :status, options_for_select(@status_options), {}, {class:"form-control"} %>
+        </div>
+        <div class="form-group form-check">
+          <%= dev.check_box(:isExternal) %>
+          <%= dev.label(:isExternal, "Equipo de usuario (No municipal)") %>
+        </div>
+        <div class="form-group">
+          <%= dev.label :details, "Detalles y aclaraciones" %>
+          <%= dev.text_area :details, rows:5,class:"form-control" %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <%= dev.submit "Guardar", class:"btn btn-primary" %>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>
+</div>

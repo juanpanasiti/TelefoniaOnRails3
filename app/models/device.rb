@@ -14,8 +14,8 @@ class Device < ApplicationRecord
   validates :isExternal, inclusion: { in: [true, false] }
   validates :isExternal, exclusion: { in: [nil] }
   #"details" no tiene validaciones aún
-  validate :expiration_date_cannot_be_in_the_past,
-    :discount_cannot_be_greater_than_total_value
+  #validate :expiration_date_cannot_be_in_the_past,
+  #  :discount_cannot_be_greater_than_total_value
 
 #  def expiration_date_cannot_be_in_the_past
 #    if expiration_date.present? && expiration_date < Date.today
@@ -28,5 +28,5 @@ class Device < ApplicationRecord
 #      errors.add(:discount, "can't be greater than total value")
 #    end
 #  end
-  #######
+
 end

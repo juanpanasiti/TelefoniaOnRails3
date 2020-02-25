@@ -1,3 +1,46 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1><i class="fas fa-tachometer-alt "></i> Dashboard</h1>
 <%= link_to "Acerca de", home_about_path %>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="accounts-tab" data-toggle="tab" href="#accounts" role="tab" aria-controls="accounts" aria-selected="true">
+      Cuentas
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="devices-tab" data-toggle="tab" href="#devices" role="tab" aria-controls="devices" aria-selected="false">
+      Equipos
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="users-tab" data-toggle="tab" href="#users" role="tab" aria-controls="users" aria-selected="false">
+      Usuarios
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="control-tab" data-toggle="tab" href="#control" role="tab" aria-controls="control" aria-selected="false">
+      Usuarios
+    </a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">
+
+    <%= render "accounts" %>
+
+  </div>
+  <div class="tab-pane fade" id="devices" role="tabpanel" aria-labelledby="devices-tab">
+
+    <%= render "devices" %>
+
+  </div>
+  <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
+
+    <%= render "users" %>
+
+  </div>
+  <div class="tab-pane fade" id="control" role="tabpanel" aria-labelledby="control-tab">
+
+    <%= render "control" %>
+
+  </div>
+</div>

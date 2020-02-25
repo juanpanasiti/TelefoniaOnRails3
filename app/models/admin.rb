@@ -13,4 +13,12 @@ class Admin < ApplicationRecord
   def get_email
     return self.email.split('@').first
   end
+  ####### Permissions
+  def can_create?
+    if self.access_level >= 3
+      return true
+    else
+      return false
+    end
+  end#can_create?
 end

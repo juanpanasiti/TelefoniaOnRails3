@@ -20,3 +20,6 @@
   border: 10px;
   background-color: gray;
 }
+.vertical-align{
+  vertical-align: middle;
+}
