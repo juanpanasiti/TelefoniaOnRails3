@@ -51,6 +51,6 @@ class DevicesController < ApplicationController
   def set_form_options
     @models_options = DeviceModel.all
     @lines_options = []
-    @status_options = []
+    @status_options = Device.get_status_options
   end
 end

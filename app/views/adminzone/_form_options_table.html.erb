@@ -1,0 +1,18 @@
+<table class="table table-hover table-stripped table-dark">
+  <thead>
+    <th>Entidad</th>
+    <th>Campo</th>
+    <th>Valor</th>
+    <th>Opciones</th>
+  </thead>
+  <tbody>
+    <% @form_options.each do |fo| %>
+    <tr>
+      <td><%= fo.get_entity_name %></td>
+      <td><%= fo.get_field_name %></td>
+      <td><%= fo.get_value %></td>
+      <td><%=  %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
