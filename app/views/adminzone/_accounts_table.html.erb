@@ -1,0 +1,24 @@
+<table class="table table-hover table-stripped table-dark">
+  <thead>
+    <th>Cuenta</th>
+    <th>Número</th>
+    <% @line_statuses.each do |ls| %>
+    <th><%= ls %></th>
+    <% end %>
+    <th>Opciones</th>
+  </thead>
+  <tbody>
+    <% @accounts.each do |a| %>
+    <tr>
+      <td><%= a.get_name %></td>
+      <td><%= a.get_number %></td>
+
+      <% @line_statuses.each do |ls| %>
+      <td><%=  %></td>
+      <% end %>
+
+      <td><%=  %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

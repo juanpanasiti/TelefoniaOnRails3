@@ -24,11 +24,17 @@
   <div class="tab-pane fade" id="offices" role="tabpanel" aria-labelledby="offices-tab">
     Lista de Oficinas
   </div>
+
   <div class="tab-pane fade" id="plans" role="tabpanel" aria-labelledby="plans-tab">
     Lista de planes de celulares
   </div>
+
   <div class="tab-pane fade" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">
-    Lista de cuentas de lines celulares
+    <%= link_to "Nueva cuenta (líneas)", new_account_path, remote: :true, class:"btn btn-success" %>
+    <%= render "accounts_table" %>
+    <div class="" id="new-account">
+    </div>
+
   </div>
   <div class="tab-pane fade" id="form-options" role="tabpanel" aria-labelledby="form-options-tab">
     <%= link_to "Nueva opción de formulario", new_form_option_path, remote: :true, class:"btn btn-success" %>

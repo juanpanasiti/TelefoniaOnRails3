@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :devices
+  resources :accounts
   resources :form_options, only:[:new, :create]
   get 'adminzone/index'
   devise_for :admins

@@ -22,7 +22,10 @@ class FormOption < ApplicationRecord
   ########### CLASS METHODS
   def self.get_fields_options
     options = []
+    #Device
     options << ["Estado (Equipo)","device_status"]
+    #Line
+    options << ["Estado (Línea)","line_status"]
 
     return options
   end#get_fields_options

@@ -1,4 +1,4 @@
-<div class="modal fade" id="form-option-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="form-account" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
@@ -8,18 +8,18 @@
       </button>
     </div>
 
-    <%= form_with(model: form_option, url:form_options_path, method:"post") do |fo| %>
+    <%= form_with(model: account, url:accounts_path, method:"post") do |fo| %>
 
       <div class="modal-body">
 
         <div class="form-group">
-          <%= fo.label :entityName, "Nombre del campo" %>
-          <%= fo.select :entityName, options_for_select(@fields_options), {}, {class:"form-control"} %>
+          <%= fo.label :name, "Nombre de la cuenta" %>
+          <%= fo.text_field :name, class:"form-control" %>
         </div>
 
         <div class="form-group">
-          <%= fo.label :optionValue, "Valor de la opción" %>
-          <%= fo.text_field :optionValue, class:"form-control" %>
+          <%= fo.label :number, "Número de la cuenta" %>
+          <%= fo.text_field :number, class:"form-control" %>
         </div>
 
 
