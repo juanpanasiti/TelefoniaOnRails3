@@ -26,6 +26,8 @@ class FormOption < ApplicationRecord
     options << ["Estado (Equipo)","device_status"]
     #Line
     options << ["Estado (Línea)","line_status"]
+    #Office
+    options << ["Categoría (Oficina)","office_category"]
 
     return options
   end#get_fields_options

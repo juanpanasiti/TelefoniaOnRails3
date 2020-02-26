@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :devices, only:[:new, :create]
+  resources :offices, only:[:new, :create]
   resources :plans, only:[:new, :create]
   resources :accounts, only:[:new, :create]
   resources :form_options, only:[:new, :create]

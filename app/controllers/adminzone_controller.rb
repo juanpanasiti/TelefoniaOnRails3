@@ -3,6 +3,7 @@ class AdminzoneController < ApplicationController
     @form_options = FormOption.all
     @accounts = Account.all
     @plans = Plan.all
+    @offices = Office.all
     @line_statuses = FormOption.get_options_for('line_status')
   end
 end
