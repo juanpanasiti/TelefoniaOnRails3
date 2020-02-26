@@ -1,0 +1,40 @@
+<div class="modal fade" id="form-plan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Formulario Plan de línea celular</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <%= form_with(model: plan, url:plans_path, method:"post") do |p| %>
+
+      <div class="modal-body">
+
+        <div class="form-group">
+          <%= p.label :name, "Nombre del plan" %>
+          <%= p.text_field :name, class:"form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= p.label :codeName, "Código del plan" %>
+          <%= p.text_field :codeName, class:"form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= p.label :details, "Detalles del plan" %>
+          <%= p.text_area :details, rows:5,class:"form-control" %>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <%= p.submit "Guardar", class:"btn btn-primary" %>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>
+</div>

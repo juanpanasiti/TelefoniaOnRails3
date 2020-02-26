@@ -1,17 +1,17 @@
-class AccountsController < ApplicationController
-  before_action :set_account, only: [:edit, :update]
+class PlansController < ApplicationController
+  before_action :set_plan, only: [:edit, :update]
 
   def new
-    @account = Account.new
+    @plan = Plan.new
     respond_to do |format|
       format.js
     end
   end
 
   def create
-    @account = Account.new(account_params)
+    @plan = Plan.new(plan_params)
     respond_to do |format|
-      if @account.save!
+      if @plan.save!
         flash[:notice] ="Creado exitosamente"
         format.html { redirect_to adminzone_index_path}
         #format.json { render :show, status: :created, location: @form_option }
@@ -23,12 +23,11 @@ class AccountsController < ApplicationController
     end
   end
   private
-    def set_account
-      @account = Account.find(params[:id])
+    def set_plan
+      @plan = Plan.find(params[:id])
     end
 
-    def account_params
-      params.require(:account).permit(:name, :number)
+    def plan_params
+      params.require(:plan).permit(:name, :codeName, :details)
     end
-
 end

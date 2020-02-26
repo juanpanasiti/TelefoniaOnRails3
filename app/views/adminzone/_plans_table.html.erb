@@ -1,0 +1,24 @@
+<table class="table table-hover table-stripped table-dark">
+  <thead>
+    <th>Nombre</th>
+    <th>Código</th>
+    <% @accounts.each do |a| %>
+    <th><%= a.get_name %></th>
+    <% end %>
+    <th>Opciones</th>
+  </thead>
+  <tbody>
+    <% @plans.each do |a| %>
+    <tr>
+      <td><%= a.get_name %></td>
+      <td><%= a.get_code_name %></td>
+
+      <% @accounts.each do |ls| %>
+      <td>#</td>
+      <% end %>
+
+      <td><%=  %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
