@@ -9,14 +9,14 @@ class Office < ApplicationRecord
   validates :name, presence:true
   validates :category, presence:true
   ############ CALLBACKS
-  
+
   ############ METHODS
   def get_fullname
     return "#{self.category.titleize} #{self.name.titleize}"
   end
 
   def get_father
-    if self.office.id != nil
+    unless self.office_id.nil?
       return self.office
     else
       return 0
