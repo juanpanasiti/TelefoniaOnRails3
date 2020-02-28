@@ -12,7 +12,7 @@ class DeviceModelsController < ApplicationController
   def create
     @device_model = DeviceModel.new(device_model_params)
     respond_to do |format|
-      if @office.save!
+      if @device_model.save!
         flash[:notice] ="Creado exitosamente"
         format.html { redirect_to adminzone_index_path}
         #format.json { render :show, status: :created, location: @form_option }
@@ -33,7 +33,10 @@ class DeviceModelsController < ApplicationController
     end
 
     def set_form_options
-      #@offices_options = Office.get_office_options
+      @slot_sim_options = []
+      @band_options = []
+      @os_max_options = []
+      @usb_type_options = []
 
     end
 end
