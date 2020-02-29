@@ -24,6 +24,11 @@ class FormOption < ApplicationRecord
     options = []
     #Device
     options << ["Estado (Equipo)","device_status"]
+    #Device Model
+    options << ["Tipo de SIM (Mod.Eq.)","device_model_slotSIM"]
+    options << ["Banda Cel. (Mod.Eq.)","device_model_band"]
+    options << ["Sistema Opetarivo (Mod.Eq.)","device_model_osMax"]
+    options << ["Tipo de puerto USB (Mod.Eq.)","device_model_usbType"]
     #Line
     options << ["Estado (Línea)","line_status"]
     #Office

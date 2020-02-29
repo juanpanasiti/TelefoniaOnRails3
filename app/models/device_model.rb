@@ -26,41 +26,60 @@ class DeviceModel < ApplicationRecord
   validates :modelCode, uniqueness: {except: nil}
   ############ METHODS
   def get_mark
-    return this.mark
+    return self.mark
   end#get_mark
 
   def get_full_model_name
-    return "#{this.modelName.titleize} (#{this.modelCode.})"
+    return "#{self.modelName.titleize} (#{self.modelCode.upcase})"
   end#get_full_model_name
 
   def get_slot_sim
-    return this.slotSIM
+    return self.slotSIM
   end#get_slot_sim
 
   def get_band
-    return this.get_band
+    return self.band
   end#get_band
 
   def get_os_max
-    return this.get_os_max
+    return self.osMax
   end#get_os_max
 
   def get_ram_size
-    return this.ramSize
+    return self.ramSize
   end#get_ram_size
 
   def get_rom_size
-    return this.romSize
+    return self.romSize
   end#get_rom_size
 
-  <td><%= dm.get_ram_size %></td>
-  <td><%= dm.get_rom_size %></td>
-  <td><%= dm.get_cpu_freq_max %></td>
-  <td><%= dm.get_cores %></td>
-  <td><%= dm.get_full_screen_size %></td>
-  <td><%= dm.get_cams_mp %></td>
-  <td><%= dm.get_battery %></td>
-  <td><%= dm.get_usb_type %></td>
-  <td><%= dm.get_announce_date %></td>
+  def get_cpu_freq_max
+    return self.cpuFreqMax
+  end#get_cpu_freq_max
+
+  def get_cores
+    return self.cores
+  end
+
+  def get_full_screen_size
+    return self.screenResolution
+  end
+
+  def get_cams_mp
+    return self.mainCam
+  end
+
+  def get_battery
+    return self.battery
+  end
+
+  def get_usb_type
+    return self.usbType
+  end
+
+  def get_announce_date
+    return self.announced
+  end
+
   ############ CLASS METHODS
 end
