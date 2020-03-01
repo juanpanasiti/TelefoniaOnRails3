@@ -1,0 +1,55 @@
+<div class="modal fade" id="new-user-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Formulario de Usuarios</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <%= form_with(model: user, url:users_path, method:"post") do |usr| %>
+
+    <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(device.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+      <div class="modal-body">
+
+        <div class="form-group">
+          <%= usr.label :name, "Nombre" %>
+          <%= usr.text_field :name, class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= usr.label :lastname, "Apellido" %>
+          <%= usr.text_field :lastname, class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= usr.label :dni, "DNI" %>
+          <%= usr.text_field :dni, class:"form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= usr.label :office_id, "Oficina" %>
+          <%= usr.select :office_id, options_for_select(@office_options), {}, {class:"form-control"} %>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <%= usr.submit "Guardar", class:"btn btn-primary" %>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>
+</div>

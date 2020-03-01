@@ -1,0 +1,41 @@
+<h1><i class="fas fa-users"></i> Usuarios</h1>
+<% if current_admin.can_create? %>
+  <%= link_to "Nuevo usuario", new_user_path, remote: :true, class:"btn btn-success" %>
+<% end %>
+
+<% unless @users.count == 0 %>
+<table class="table table-stripped table-hover table-dark">
+  <thead>
+    <th>Nombre</th>
+    <th>DNI</th>
+    <th>Oficina</th>
+    <th>Líneas</th>
+    <th>Opciones</th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.get_fullname %></td>
+      <td><%= user.get_dni_formatted %></td>
+      <td><%= user.get_office_fullname %></td>
+      <td><%= user.lines.count %></td>
+      <td></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+<div class="alert alert-warning" role="alert">
+  <h4 class="alert-heading">No hay usuarios cargados!</h4>
+  <p>Un adminsitrador con permisos de acceso debería comenzar a agregarlos.</p>
+  <span class="fa-stack fa-2x">
+  <i class="fas fa-user-plus fa-stack-2x pull-left"></i>
+
+</span>
+</div>
+<% end %>
+
+<!-- Experimantal -->
+<div class="" id="new-user">
+
+</div>
