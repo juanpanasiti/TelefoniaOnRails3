@@ -82,4 +82,11 @@ class DeviceModel < ApplicationRecord
   end
 
   ############ CLASS METHODS
+  def self.get_device_model_options
+    options = []
+    self.all.each do |device_model|
+      options << [device_model.get_full_model_name,device_model.id]
+    end
+    return options
+  end#get_office_options
 end

@@ -40,6 +40,7 @@ class Office < ApplicationRecord
     self.all.each do |office|
       options << [office.get_fullname,office.id]
     end
+    return options
   end#get_office_options
 
   #############CALLBACKS METHODS
