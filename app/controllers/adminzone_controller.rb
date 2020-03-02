@@ -1,5 +1,6 @@
 class AdminzoneController < ApplicationController
   def index
+    @admins = Admin.all
     @form_options = FormOption.all
     @accounts = Account.all
     @plans = Plan.all

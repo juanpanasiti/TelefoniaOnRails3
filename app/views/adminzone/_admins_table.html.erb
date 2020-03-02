@@ -1,0 +1,18 @@
+<table class="table table-hover table-stripped table-dark">
+  <thead>
+    <th>E-mail</th>
+    <th>Permisos</th>
+    <th>Última Sesión</th>
+    <th>Opciones</th>
+  </thead>
+  <tbody>
+    <% @admins.each do |a| %>
+    <tr>
+      <td><%= a.get_email %></td>
+      <td><%= a.get_permissions %></td>
+      <td><%= a.get_last_session %></td>
+      <td>...</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
