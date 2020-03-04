@@ -1,0 +1,2 @@
+class CsvReportLinesController < ApplicationController
+end
