@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_231519) do
+ActiveRecord::Schema.define(version: 2020_03_02_121120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,11 +94,11 @@ ActiveRecord::Schema.define(version: 2020_02_26_231519) do
 
   create_table "lines", force: :cascade do |t|
     t.string "number"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.string "status"
     t.bigint "account_id", null: false
     t.date "lastCheck"
-    t.bigint "plan_id", null: false
+    t.bigint "plan_id"
     t.string "sim"
     t.text "details"
     t.datetime "created_at", precision: 6, null: false

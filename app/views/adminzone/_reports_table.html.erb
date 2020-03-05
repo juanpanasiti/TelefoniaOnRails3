@@ -1,0 +1,18 @@
+<table class="table table-hover table-stripped table-dark">
+  <thead>
+    <th>Cuenta</th>
+    <th>Fecha</th>
+    <th>Líneas</th>
+    <th>Opciones</th>
+  </thead>
+  <tbody>
+    <% @reports.each do |r| %>
+    <tr>
+      <td><%= r.get_account %></td>
+      <td><%= r.get_date %></td>
+      <td><%= r.get_count_lines %></td>
+      <td>...</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

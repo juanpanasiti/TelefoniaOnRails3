@@ -7,5 +7,6 @@ class AdminzoneController < ApplicationController
     @offices = Office.all
     @device_models = DeviceModel.all
     @line_statuses = FormOption.get_options_for('line_status')
+    @reports = CsvReportLine.all
   end
 end

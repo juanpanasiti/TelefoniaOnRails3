@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :devices, only:[:index, :new, :create]
   resources :offices, only:[:new, :create]
   resources :device_models, only:[:new, :create]
+  resources :csv_report_lines, only:[:new, :create], as: :reports
   resources :plans, only:[:new, :create]
   resources :accounts, only:[:new, :create]
   resources :form_options, only:[:new, :create]

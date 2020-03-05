@@ -5,6 +5,9 @@
     <a class="nav-link active" id="admins-tab" data-toggle="tab" href="#admins" role="tab" aria-controls="admins" aria-selected="true">Administradores</a>
   </li>
   <li class="nav-item">
+    <a class="nav-link" id="device-reports" data-toggle="tab" href="#reports" role="tab" aria-controls="reports" aria-selected="true">Reportes</a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link" id="device-models-tab" data-toggle="tab" href="#device-models" role="tab" aria-controls="device-models" aria-selected="true">Modelos de Equipo</a>
   </li>
   <li class="nav-item">
@@ -23,6 +26,13 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="admins" role="tabpanel" aria-labelledby="admins-tab">
     <%= render "admins_table" %>
+  </div>
+
+  <div class="tab-pane fade show" id="reports" role="tabpanel" aria-labelledby="reports-tab">
+    <%= link_to "Nuevo Reporte", new_report_path, remote: :true, class:"btn btn-success" %>
+    <%= render "reports_table" %>
+    <div class="" id="new-report">
+    </div>
   </div>
 
   <div class="tab-pane fade show" id="device-models" role="tabpanel" aria-labelledby="device-models-tab">
