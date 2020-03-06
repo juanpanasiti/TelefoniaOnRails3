@@ -1,0 +1,2 @@
+class MailAccountsController < ApplicationController
+end
