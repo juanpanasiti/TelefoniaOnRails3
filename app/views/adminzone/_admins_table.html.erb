@@ -8,10 +8,10 @@
   <tbody>
     <% @admins.each do |a| %>
     <tr>
-      <td><%= a.get_email %></td>
-      <td><%= a.get_permissions %></td>
-      <td><%= a.get_last_session %></td>
-      <td>...</td>
+      <td class="align-middle"><%= a.get_email %></td>
+      <td class="align-middle"><%= a.get_permissions %></td>
+      <td class="align-middle"><%= a.get_last_session %></td>
+      <td class="align-middle">...</td>
     </tr>
     <% end %>
   </tbody>

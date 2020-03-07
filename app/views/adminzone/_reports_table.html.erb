@@ -8,10 +8,10 @@
   <tbody>
     <% @reports.each do |r| %>
     <tr>
-      <td><%= r.get_account %></td>
-      <td><%= r.get_date %></td>
-      <td><%= r.get_count_lines %></td>
-      <td>...</td>
+      <td class="align-middle"><%= r.get_account %></td>
+      <td class="align-middle"><%= r.get_date %></td>
+      <td class="align-middle"><%= r.get_count_lines %></td>
+      <td class="align-middle">...</td>
     </tr>
     <% end %>
   </tbody>

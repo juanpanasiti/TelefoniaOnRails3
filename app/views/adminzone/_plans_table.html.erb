@@ -10,14 +10,14 @@
   <tbody>
     <% @plans.each do |a| %>
     <tr>
-      <td><%= a.get_name %></td>
-      <td><%= a.get_code_name %></td>
+      <td class="align-middle"><%= a.get_name %></td>
+      <td class="align-middle"><%= a.get_code_name %></td>
 
       <% @accounts.each do |ls| %>
-      <td>#</td>
+      <td class="align-middle">#</td>
       <% end %>
 
-      <td><%=  %></td>
+      <td class="align-middle"><%=  %></td>
     </tr>
     <% end %>
   </tbody>

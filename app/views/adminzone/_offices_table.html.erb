@@ -8,10 +8,10 @@
   <tbody>
     <% @offices.each do |o| %>
     <tr>
-      <td><%= o.get_fullname %></td>
-      <td><%= o.get_father_fullname %></td>
-      <td>#</td>
-      <td>...</td>
+      <td class="align-middle"><%= o.get_fullname %></td>
+      <td class="align-middle"><%= o.get_father_fullname %></td>
+      <td class="align-middle">#</td>
+      <td class="align-middle">...</td>
     </tr>
     <% end %>
   </tbody>

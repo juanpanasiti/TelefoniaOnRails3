@@ -20,22 +20,22 @@
   <tbody>
     <% @device_models.each do |dm| %>
     <tr>
-      <td><%= dm.get_mark %></td>
-      <td><%= dm.get_full_model_name %></td>
-      <td><%= dm.get_slot_sim %></td>
-      <td><%= dm.get_band %></td>
-      <td><%= dm.get_os_max %></td>
-      <td><%= dm.get_ram_size %></td>
-      <td><%= dm.get_rom_size %></td>
-      <td><%= dm.get_cpu_freq_max %></td>
-      <td><%= dm.get_cores %></td>
-      <td><%= dm.get_full_screen_size %></td>
-      <td><%= dm.get_cams_mp %></td>
-      <td><%= dm.get_battery %></td>
-      <td><%= dm.get_usb_type %></td>
-      <td><%= dm.get_announce_date %></td>
-      <td>#</td>
-      <td>...</td>
+      <td class="align-middle"><%= dm.get_mark %></td>
+      <td class="align-middle"><%= dm.get_full_model_name %></td>
+      <td class="align-middle"><%= dm.get_slot_sim %></td>
+      <td class="align-middle"><%= dm.get_band %></td>
+      <td class="align-middle"><%= dm.get_os_max %></td>
+      <td class="align-middle"><%= dm.get_ram_size %></td>
+      <td class="align-middle"><%= dm.get_rom_size %></td>
+      <td class="align-middle"><%= dm.get_cpu_freq_max %></td>
+      <td class="align-middle"><%= dm.get_cores %></td>
+      <td class="align-middle"><%= dm.get_full_screen_size %></td>
+      <td class="align-middle"><%= dm.get_cams_mp %></td>
+      <td class="align-middle"><%= dm.get_battery %></td>
+      <td class="align-middle"><%= dm.get_usb_type %></td>
+      <td class="align-middle"><%= dm.get_announce_date %></td>
+      <td class="align-middle">#</td>
+      <td class="align-middle">...</td>
     </tr>
     <% end %>
   </tbody>

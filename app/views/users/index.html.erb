@@ -20,7 +20,12 @@
       <td class="align-middle"><%= user.get_office_fullname %></td>
       <td class="align-middle"><%= user.lines.count %></td>
       <td class="align-middle">
-        <%= render "shared/buttons/edit_button_simple", link_url: edit_user_path(user), link_icon: "fas fa-user-edit", link_text: "", link_class: "btn btn-warning", link_remote: :true %>
+        <%= render "shared/buttons/edit_button_simple",
+              link_url: edit_user_path(user),
+              link_icon: "fas fa-user-edit",
+              link_text: "",
+              link_class: "btn btn-warning",
+              link_remote: :true %>
       </td>
     </tr>
     <% end %>

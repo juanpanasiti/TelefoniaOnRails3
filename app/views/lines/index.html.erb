@@ -15,11 +15,11 @@
   <tbody>
     <% @lines.each do |line| %>
     <tr>
-      <td><%= line.get_number %></td>
-      <td><%= line.get_user_fullname %></td>
-      <td><%= line.get_office_fullname %></td>
-      <td><%= line.get_plan %></td>
-      <td>
+      <td class="align-middle"><%= line.get_number %></td>
+      <td class="align-middle"><%= line.get_user_fullname %></td>
+      <td class="align-middle"><%= line.get_office_fullname %></td>
+      <td class="align-middle"><%= line.get_plan %></td>
+      <td class="align-middle">
         <% if current_admin.can_create? %>
           <%= link_to "Editar", edit_line_path(line), remote: :true, class:"btn btn-success" %>
         <% end %>
