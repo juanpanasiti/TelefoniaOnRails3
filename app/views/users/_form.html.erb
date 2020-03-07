@@ -39,7 +39,7 @@
 
         <div class="form-group">
           <%= usr.label :office_id, "Oficina" %>
-          <%= usr.select :office_id, options_for_select(@office_options), {}, {class:"form-control"} %>
+          <%= usr.select :office_id, @office_options.map { |val| [val[0],val[1]] }, {}, {class:"form-control"} %>
         </div>
 
       </div>

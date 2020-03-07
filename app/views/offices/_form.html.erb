@@ -14,12 +14,12 @@
 
         <div class="form-group">
           <%= o.label :office_id, "Pertenece a" %>
-          <%= o.select :office_id, options_for_select(@offices_options), {}, {class:"form-control"} %>
+          <%= o.select :office_id, @offices_options.map { |val| [val[0],val[1]] }, {}, {class:"form-control"} %>
         </div>
 
         <div class="form-group">
           <%= o.label :category, "Categoría" %>
-          <%= o.select :category, options_for_select(@categories_options), {}, {class:"form-control"} %>
+          <%= o.select :category, @categories_options.map { |val| [val,val] }, {}, {class:"form-control"} %>
         </div>
 
         <div class="form-group">

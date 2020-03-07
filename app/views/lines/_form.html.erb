@@ -23,22 +23,22 @@
 
         <div class="form-group">
           <%= line.label :user_id, "Usuario" %>
-          <%= line.select :user_id, options_for_select(@user_options), {}, {class:"form-control"} %>
+          <%= line.select :user_id, @user_options.map { |val| [val[0],val[1]] }, {}, {class:"form-control"} %>
         </div>
 
         <div class="form-group">
           <%= line.label :plan_id, "Plan" %>
-          <%= line.select :plan_id, options_for_select(@plan_options), {}, {class:"form-control"} %>
+          <%= line.select :plan_id, @plan_options.map { |val| [val[0],val[1]] }, {}, {class:"form-control"} %>
         </div>
 
         <div class="form-group">
           <%= line.label :status, "Estado" %>
-          <%= line.select :status, options_for_select(@status_options), {}, {class:"form-control"} %>
+          <%= line.select :status, @status_options.map{|val|[val,val]}, {}, {class:"form-control"} %>
         </div>
 
         <div class="form-group">
           <%= line.label :sim, "Formato SIM" %>
-          <%= line.select :sim, options_for_select(@sim_options), {}, {class:"form-control"} %>
+          <%= line.select :sim, @sim_options.map{|value|[value,value]}, {}, {class:"form-control"} %>
         </div>
 
         <div class="form-group">

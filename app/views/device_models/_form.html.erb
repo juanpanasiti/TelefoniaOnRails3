@@ -29,17 +29,17 @@
 
         <div class="form-group">
           <%= dm.label :slotSIM, "Tipo de SIM" %>
-          <%= dm.select :slotSIM, options_for_select(@slot_sim_options), {}, {class:"form-control"} %>
+          <%= dm.select :slotSIM, @slot_sim_options.map { |val| [val,val] }, {}, {class:"form-control"} %>
         </div>
 
         <div class="form-group">
           <%= dm.label :band, "Banda" %>
-          <%= dm.select :band, options_for_select(@band_options), {}, {class:"form-control"} %>
+          <%= dm.select :band, @band_options.map { |val| [val,val] }, {}, {class:"form-control"} %>
         </div>
 
         <div class="form-group">
           <%= dm.label :osMax, "Sistema Operativo (mayor actualización)" %>
-          <%= dm.select :osMax, options_for_select(@os_max_options), {}, {class:"form-control"} %>
+          <%= dm.select :osMax, @os_max_options.map { |val| [val,val] }, {}, {class:"form-control"} %>
         </div>
 
         <div class="form-group">
@@ -94,7 +94,7 @@
 
         <div class="form-group">
           <%= dm.label :usbType, "Tipo de USB" %>
-          <%= dm.select :usbType, options_for_select(@usb_type_options), {}, {class:"form-control"} %>
+          <%= dm.select :usbType, @usb_type_options.map { |val| [val,val] }, {}, {class:"form-control"} %>
         </div>
 
         <div class="form-group">
