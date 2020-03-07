@@ -18,7 +18,10 @@ class User < ApplicationRecord
   end#get_fullname
 
   def get_dni_formatted
-    return self.dni.reverse.insert(6,'.').insert(3,'.').reverse
+    unless self.dni.empty?
+      return self.dni.reverse.insert(6,'.').insert(3,'.').reverse
+    end
+    return self.dni
   end#get_dni_formatted
 
   def get_office_fullname

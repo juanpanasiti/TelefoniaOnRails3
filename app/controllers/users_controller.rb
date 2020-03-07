@@ -18,10 +18,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save!
         flash[:notice] ="Creado exitosamente"
-        format.html {redirect_to devices_path}
+        format.html {redirect_to users_path}
       else
         flash[:danger] ="Contiene errores"
-        format.html {redirect_to devices_path, alert:"ERROR"}
+        format.html {redirect_to users_path, alert:"ERROR"}
         #
       end
     end
@@ -31,9 +31,21 @@ class UsersController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
+    respond_to do |format|
+      if @user.update(user_params)
+        flash[:notice] ="Editado exitosamente"
+        format.html {redirect_to users_path}
+      else
+        flash[:danger] ="Contiene errores"
+        format.html {redirect_to users_path}
+      end
+    end
   end
 
   def destroy
