@@ -6,20 +6,24 @@
 <% unless @lines.count == 0 %>
 <table class="table table-stripped table-hover table-dark">
   <thead>
-    <th>Nombre</th>
-    <th>DNI</th>
+    <th>Número</th>
+    <th>Usuario</th>
     <th>Oficina</th>
-    <th>Líneas</th>
+    <th>Plan</th>
     <th>Opciones</th>
   </thead>
   <tbody>
     <% @lines.each do |line| %>
     <tr>
-      <td><%= line.get_fullname %></td>
-      <td><%= line.get_dni_formatted %></td>
+      <td><%= line.get_number %></td>
+      <td><%= line.get_user_fullname %></td>
       <td><%= line.get_office_fullname %></td>
-      <td><%= line.lines.count %></td>
-      <td></td>
+      <td><%= line.get_plan %></td>
+      <td>
+        <% if current_admin.can_create? %>
+          <%= link_to "Editar", edit_line_path(line), remote: :true, class:"btn btn-success" %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>

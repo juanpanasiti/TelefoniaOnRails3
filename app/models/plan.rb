@@ -17,5 +17,9 @@ class Plan < ApplicationRecord
   def get_code_name
     return self.codeName
   end#get_code_name
+
+  def get_fullname
+    return "#{self.name} (#{self.codeName})"
+  end#get_fullname
   ############ CLASS METHODS
 end

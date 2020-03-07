@@ -31,7 +31,7 @@ class FormOption < ApplicationRecord
     options << ["Tipo de puerto USB (Mod.Eq.)","device_model_usbType"]
     #Line
     options << ["Estado (Línea)","line_status"]
-    options << ["Estado (Línea)","line_sim"]
+    options << ["Tipo SIM (Línea)","line_sim"]
     #Office
     options << ["Categoría (Oficina)","office_category"]
 

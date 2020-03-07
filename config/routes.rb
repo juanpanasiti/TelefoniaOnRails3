@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :lines, only:[:index, :new, :create]
+  resources :lines, except:[:show, :destroy]
   resources :users, only:[:index, :new, :create]
   resources :devices, only:[:index, :new, :create]
   resources :offices, only:[:new, :create]

@@ -1,0 +1,3 @@
+$('#new-line').html("<%= j (render 'form', line:@line, url:line_path, method:'PUT')%>");
+$('#new-line-modal').modal('show')
+$('#new-line').slideDown(350)

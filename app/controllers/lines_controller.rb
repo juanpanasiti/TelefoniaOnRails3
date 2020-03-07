@@ -3,7 +3,7 @@ class LinesController < ApplicationController
   before_action :set_form_options, only: [:new, :create, :edit, :update]
   def index
     @lines = Line.all
-    @new_line = Line.new
+
   end
 
   def new
@@ -16,12 +16,12 @@ class LinesController < ApplicationController
   def create
     @line = Line.new(line_params)
     respond_to do |format|
-      if @user.save!
+      if @line.save!
         flash[:notice] ="Creado exitosamente"
-        format.html {redirect_to devices_path}
+        format.html {redirect_to lines_path}
       else
         flash[:danger] ="Contiene errores"
-        format.html {redirect_to devices_path, alert:"ERROR"}
+        format.html {redirect_to lines_path}
         #
       end
     end
@@ -31,9 +31,21 @@ class LinesController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
+    respond_to do |format|
+      if @line.update(line_params)
+        flash[:notice] ="Editado exitosamente"
+        format.html {redirect_to lines_path}
+      else
+        flash[:danger] ="Contiene errores"
+        format.html {redirect_to lines_path}
+      end
+    end
   end
 
   def destroy
@@ -41,7 +53,7 @@ class LinesController < ApplicationController
 
   private
   def set_line
-    @user = User.find(params[:id])
+    @line = Line.find(params[:id])
   end
 
   def line_params

@@ -8,7 +8,7 @@
       </button>
     </div>
 
-    <%= form_with(model: line, url:lines_path, method:"post") do |line| %>
+    <%= form_with(model: line, url:url, method:method) do |line| %>
 
       <div class="modal-body">
         <div class="form-group">
@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-group">
-          <%= line.label :lastCheck, "Fecha de anuncio/release" %>
+          <%= line.label :lastCheck, "Último check" %>
           <%= line.date_field :lastCheck, class:"form-control" %>
         </div>
 
