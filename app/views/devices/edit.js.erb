@@ -1,0 +1,3 @@
+$('#form-device').html("<%= j (render 'form', device:@device, url:device_path, method:'PUT')%>");
+$('#form-device-modal').modal('show')
+$('#form-device').slideDown(350)

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :lines, except:[:show, :destroy]
   resources :users, except:[:show, :destroy]
   resources :ip_phones, except:[:show, :destroy]
-  resources :devices, only:[:index, :new, :create]
+  resources :devices, except:[:show, :destroy]
   resources :offices, only:[:new, :create]
   resources :device_models, only:[:new, :create]
   resources :csv_report_lines, only:[:new, :create], as: :reports

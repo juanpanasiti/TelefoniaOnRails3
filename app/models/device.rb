@@ -1,6 +1,12 @@
 class Device < ApplicationRecord
+  #t.string "imei"
+  #t.bigint "device_model_id", null: false
+  #t.bigint "line_id", null: false
+  #t.string "status"
+  #t.boolean "isExternal"
+  #t.text "details"
   ####### Relation
-  belongs_to :deviceModel
+  belongs_to :device_model
   belongs_to :line
 
   ####### Validations
@@ -28,7 +34,23 @@ class Device < ApplicationRecord
   #      errors.add(:discount, "can't be greater than total value")
   #    end
   #  end
-  ####### Validations
+  ####### METHODS
+  def get_full_model_name
+    return self.device_model.get_full_model_name
+  end#get_full_model_name
+
+  def get_imei
+    return self.imei
+  end#get_imei
+
+  def get_line_number
+    return self.line.get_number
+  end#get_line_number
+
+  def get_status
+    return self.status
+  end#get_status
+  ####### CLASS METHODS
   def self.get_status_options
     return FormOption.get_options_for("device_status")
   end#get_status_options

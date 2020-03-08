@@ -16,11 +16,18 @@
   <tbody>
     <% @devices.each do |device| %>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td class="align-middle"> <%= device.get_full_model_name %> </td>
+      <td class="align-middle"> <%= device.get_imei %> </td>
+      <td class="align-middle"> <%= device.get_line_number %> </td>
+      <td class="align-middle"> <%= device.get_status %> </td>
+      <td class="align-middle">
+        <%= render "shared/buttons/edit_button_simple",
+              link_url: edit_device_path(device),
+              link_icon: "fas fa-edit",
+              link_text: "",
+              link_class: "btn btn-warning",
+              link_remote: :true %>
+      </td>
     </tr>
     <% end %>
   </tbody>
@@ -37,6 +44,6 @@
 <% end %>
 
 <!-- Experimantal -->
-<div class="" id="new-device">
+<div class="" id="form-device">
 
 </div>

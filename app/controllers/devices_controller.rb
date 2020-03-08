@@ -16,7 +16,7 @@ class DevicesController < ApplicationController
   def create
     @device = Device.new(device_params)
     respond_to do |format|
-      if @device.valid?
+      if @device.save!
         flash[:notice] ="Creado exitosamente"
         format.html {redirect_to devices_path}
       else
@@ -31,9 +31,21 @@ class DevicesController < ApplicationController
   end
 
   def edit
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
+    respond_to do |format|
+      if @device.update(device_params)
+        flash[:notice] ="Editado exitosamente"
+        format.html {redirect_to devices_path}
+      else
+        flash[:danger] ="Contiene errores"
+        format.html {redirect_to devices_path}
+      end
+    end
   end
 
   def destroy
@@ -45,7 +57,7 @@ class DevicesController < ApplicationController
   end
 
   def device_params
-    params.require(:device).permit(:imei, :isExternal, :details)
+    params.require(:device).permit(:imei, :isExternal, :details, :device_model_id, :line_id, :status)
   end
 
   def set_form_options

@@ -1,4 +1,4 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="form-device-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
@@ -8,19 +8,7 @@
       </button>
     </div>
 
-    <%= form_with(model: device, url:devices_path, method:"post") do |dev| %>
-
-    <% if device.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(device.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-      <ul>
-        <% device.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-    <% end %>
+    <%= form_with(model: device, url:url, method:method) do |dev| %>
 
       <div class="modal-body">
         <div class="form-group">
