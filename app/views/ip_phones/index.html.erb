@@ -1,0 +1,51 @@
+<h1><i class="fas fa-mobile-alt "></i> Equipos celulares</h1>
+
+<% if current_admin.can_create? %>
+  <%= link_to "Nuevo IP", new_ip_phone_path, remote: :true, class:"btn btn-success" %>
+<% end %>
+
+<% unless @ip_phones.count == 0 %>
+<table class="table table-stripped table-hover table-dark">
+  <thead>
+    <th>Nombre</th>
+    <th>Número</th>
+    <th>Dir. IP</th>
+    <th>Estado</th>
+    <th>Opciones</th>
+  </thead>
+  <tbody>
+    <% @ip_phones.each do |ip| %>
+    <tr>
+      <td class="align-middle"><%= ip.get_name %></td>
+      <td class="align-middle"><%= ip.get_number %></td>
+      <td class="align-middle"><%= ip.get_ip %></td>
+      <td class="align-middle" id="status-<%= ip.id %>"></td>
+      <td class="align-middle">
+        <% if current_admin.can_create? %>
+        <%= render "shared/buttons/edit_button_simple",
+              link_url: edit_ip_phone_path(ip),
+              link_icon: "fas fa-edit",
+              link_text: "",
+              link_class: "btn btn-warning",
+              link_remote: :true %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+<div class="alert alert-warning" role="alert">
+  <h4 class="alert-heading">No hay teléfonos IP cargados!</h4>
+  <p>Un adminsitrador con permisos de acceso debería comenzar a agregarlos.</p>
+  <span class="fa-stack fa-2x">
+  <i class="fas fa-mobile fa-stack-2x pull-left"></i>
+  <i class="fas fa-plus fa-stack-1x" style="color:Lightgreen"></i>
+</span>
+</div>
+<% end %>
+
+<!-- Experimantal -->
+<div class="" id="form-ip-phone">
+
+</div>

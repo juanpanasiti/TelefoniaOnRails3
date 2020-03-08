@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_121120) do
+ActiveRecord::Schema.define(version: 2020_03_08_195614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,14 @@ ActiveRecord::Schema.define(version: 2020_03_02_121120) do
   create_table "form_options", force: :cascade do |t|
     t.string "entityName"
     t.string "optionValue"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ip_phones", force: :cascade do |t|
+    t.string "name"
+    t.string "number"
+    t.string "ipAddress"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

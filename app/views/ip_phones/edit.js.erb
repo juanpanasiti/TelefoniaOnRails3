@@ -1,0 +1,3 @@
+$('#form-ip-phone').html("<%= j (render 'form', ip_phone:@ip_phone, url:ip_phone_path, method:'PUT')%>");
+$('#form-ip-phone-modal').modal('show')
+$('#form-ip-phone').slideDown(350)
