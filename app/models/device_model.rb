@@ -89,4 +89,25 @@ class DeviceModel < ApplicationRecord
     end
     return options
   end#get_office_options
+
+  #@slot_sim_options = DeviceModel.get_sim_options
+  #@band_options = DeviceModel.get_band_options
+  #@os_max_options = DeviceModel.get_os_max_options
+  #@usb_type_options = DeviceModel.get_usb_type_options
+  def self.get_sim_options
+    FormOption.get_options_for("device_model_slotSIM")
+  end#get_sim_options
+
+  def self.get_band_options
+    FormOption.get_options_for("device_model_band")
+  end#get_band_options
+
+  def self.get_os_max_options
+    FormOption.get_options_for("device_model_osMax")
+  end#get_os_max_options
+
+  def self.get_usb_type_options
+    FormOption.get_options_for("device_model_usbType")
+  end#get_usb_type_options
+
 end

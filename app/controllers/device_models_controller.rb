@@ -33,10 +33,10 @@ class DeviceModelsController < ApplicationController
     end
 
     def set_form_options
-      @slot_sim_options = []
-      @band_options = []
-      @os_max_options = []
-      @usb_type_options = []
+      @slot_sim_options = DeviceModel.get_sim_options
+      @band_options = DeviceModel.get_band_options
+      @os_max_options = DeviceModel.get_os_max_options
+      @usb_type_options = DeviceModel.get_usb_type_options
 
     end
 end
