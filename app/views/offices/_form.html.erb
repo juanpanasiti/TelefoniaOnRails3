@@ -1,4 +1,4 @@
-<div class="modal fade" id="form-office" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="form-office-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
@@ -8,7 +8,7 @@
       </button>
     </div>
 
-    <%= form_with(model: office, url:offices_path, method:"post") do |o| %>
+    <%= form_with(model: office, url:url, method:method) do |o| %>
 
       <div class="modal-body">
 

@@ -1,0 +1,3 @@
+$('#form-office').html("<%= j (render 'form', office:@office, url:office_path, method:'PUT')%>");
+$('#form-office-modal').modal('show')
+$('#form-office').slideDown(350)

@@ -36,7 +36,7 @@ class Office < ApplicationRecord
   end#get_category_options
 
   def self.get_office_options
-    options = []
+    options = [["",""]]
     self.all.each do |office|
       options << [office.get_fullname,office.id]
     end

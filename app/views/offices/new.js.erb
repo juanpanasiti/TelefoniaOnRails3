@@ -1,3 +1,3 @@
-$('#new-office').html("<%= j (render 'form', office:@office)%>");
-$('#form-office').modal('show')
-$('#new-office').slideDown(350)
+$('#form-office').html("<%= j (render 'form', office:@office, url:offices_path, method:'POST')%>");
+$('#form-office-modal').modal('show')
+$('#form-office').slideDown(350)
