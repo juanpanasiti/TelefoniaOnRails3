@@ -1,0 +1,3 @@
+$('#form-form-option').html("<%= j (render 'form', form_option:@form_option, url:form_option_path, method:'PUT')%>");
+$('#form-option-modal').modal('show')
+$('#form-form-option').slideDown(350)

@@ -1,7 +1,7 @@
 class AdminzoneController < ApplicationController
   def index
     @admins = Admin.all
-    @form_options = FormOption.all
+    @form_options = FormOption.all.order(:entityName)
     @accounts = Account.all
     @plans = Plan.all
     @offices = Office.all

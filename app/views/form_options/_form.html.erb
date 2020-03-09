@@ -8,13 +8,13 @@
       </button>
     </div>
 
-    <%= form_with(model: form_option, url:form_options_path, method:"post") do |fo| %>
+    <%= form_with(model: form_option, url:url, method:method) do |fo| %>
 
       <div class="modal-body">
 
         <div class="form-group">
           <%= fo.label :entityName, "Nombre del campo" %>
-          <%= fo.select :entityName, @fields_options.map { |val| [val] }, {}, {class:"form-control"} %>
+          <%= fo.select :entityName, @fields_options.map { |val| [val[0],val[1]] }, {}, {class:"form-control"}  %>
         </div>
 
         <div class="form-group">

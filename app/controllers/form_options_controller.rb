@@ -1,5 +1,5 @@
 class FormOptionsController < ApplicationController
-  before_action :set_form_option, only: [:edit]
+  before_action :set_form_option, only: [:edit, :update]
   before_action :set_form_options, only: [:new, :create, :edit, :update]
 
 
@@ -24,6 +24,27 @@ class FormOptionsController < ApplicationController
       end
     end
   end
+
+  def edit
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update
+    respond_to do |format|
+      puts "FORM OPTIONS"
+      puts @form_option.class
+      if @form_option.update!(form_option_params)
+        flash[:notice] ="Editado exitosamente"
+        format.html {redirect_to adminzone_index_path}
+      else
+        flash[:danger] ="Contiene errores"
+        format.html {redirect_to devicadminzone_index_pathes_path}
+      end
+    end
+  end
+
   private
     def set_form_option
       @form_option = FormOption.find(params[:id])
