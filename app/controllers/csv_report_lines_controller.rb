@@ -1,5 +1,5 @@
 class CsvReportLinesController < ApplicationController
-  before_action :set_report, only: [:edit, :update]
+  before_action :set_report, only: [:edit, :update, :show]
   before_action :set_form_options, only: [:new, :create, :edit, :update]
 
   def new
@@ -24,6 +24,13 @@ class CsvReportLinesController < ApplicationController
       end
     end
   end
+
+  def show
+    table = @report.get_table
+    @table_head = table.first
+    @table_body = table[1..-1]
+  end
+
   private
     def set_report
       @report = CsvReportLine.find(params[:id])

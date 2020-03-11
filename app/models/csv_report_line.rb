@@ -26,6 +26,20 @@ class CsvReportLine < ApplicationRecord
     self.report = File.read(url_csv, :encoding => 'ISO8859-1')
   end#set_full_table_from_file
 
+  def get_table
+    table = []
+    self.report.split("\n").each do |row|
+      table_row = []
+      row.split(";").each do |cell|
+        cell.gsub!("\t",'')
+        cell.gsub!('"','')
+        table_row << cell
+      end
+      table << table_row
+    end
+    return table
+  end
+
   ############ CLASS METHODS
 
   def self.get_account_options

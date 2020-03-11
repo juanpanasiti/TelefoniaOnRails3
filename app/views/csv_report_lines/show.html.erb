@@ -1,0 +1,20 @@
+<h1><%=  @report.get_account %> <small> <%= @report.get_date %> </small> </h1>
+<%= @table_head[0] %>
+<table class="table table-stripped table-hover table-dark">
+  <thead>
+    <% @table_head.each do |col| %>
+    <th><%= col %></th>
+    <% end %>
+    <th>Acciones</th>
+  </thead>
+  <tbody>
+    <% @table_body.each do |row| %>
+    <tr>
+      <% row.each do |cell| %>
+      <td class="align-middle"><%= cell %></td>
+      <% end %>
+    </tr>
+    <% end %>
+    <td class="align-middle"></td>
+  </tbody>
+</table>

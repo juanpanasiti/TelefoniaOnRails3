@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :offices, except:[:show, :destroy]
   resources :form_options, except:[:show, :destroy]
   resources :device_models, only:[:new, :create]
-  resources :csv_report_lines, only:[:new, :create], as: :reports
+  resources :csv_report_lines, only:[:new, :create, :show], as: :reports
   resources :plans, only:[:new, :create]
   resources :accounts, only:[:new, :create]
   get 'adminzone/index'

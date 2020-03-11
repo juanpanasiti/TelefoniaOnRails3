@@ -11,7 +11,11 @@
       <td class="align-middle"><%= r.get_account %></td>
       <td class="align-middle"><%= r.get_date %></td>
       <td class="align-middle"><%= r.get_count_lines %></td>
-      <td class="align-middle">...</td>
+      <td class="align-middle">
+        <%= link_to report_path(r), class: "btn btn-info" do %>
+          <i class="fas fa-eye"></i>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>
