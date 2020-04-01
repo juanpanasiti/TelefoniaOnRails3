@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  telephone_switch: one
+  number: MyString
+  name: MyString
+  office: one
+  kind: MyString
+
+two:
+  telephone_switch: two
+  number: MyString
+  name: MyString
+  office: two
+  kind: MyString

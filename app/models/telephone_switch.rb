@@ -1,0 +1,2 @@
+class TelephoneSwitch < ApplicationRecord
+end

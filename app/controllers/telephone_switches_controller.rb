@@ -1,0 +1,2 @@
+class TelephoneSwitchesController < ApplicationController
+end

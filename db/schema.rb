@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_08_195614) do
+ActiveRecord::Schema.define(version: 2020_04_01_131611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,18 @@ ActiveRecord::Schema.define(version: 2020_03_08_195614) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "internals", force: :cascade do |t|
+    t.bigint "telephone_switch_id", null: false
+    t.string "number"
+    t.string "name"
+    t.bigint "office_id", null: false
+    t.string "kind"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["office_id"], name: "index_internals_on_office_id"
+    t.index ["telephone_switch_id"], name: "index_internals_on_telephone_switch_id"
+  end
+
   create_table "ip_phones", force: :cascade do |t|
     t.string "name"
     t.string "number"
@@ -144,6 +156,14 @@ ActiveRecord::Schema.define(version: 2020_03_08_195614) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "telephone_switches", force: :cascade do |t|
+    t.string "ip"
+    t.string "name"
+    t.string "header"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "lastname"
@@ -157,6 +177,8 @@ ActiveRecord::Schema.define(version: 2020_03_08_195614) do
   add_foreign_key "csv_report_lines", "accounts"
   add_foreign_key "devices", "device_models"
   add_foreign_key "devices", "lines"
+  add_foreign_key "internals", "offices"
+  add_foreign_key "internals", "telephone_switches"
   add_foreign_key "lines", "accounts"
   add_foreign_key "lines", "plans"
   add_foreign_key "lines", "users"

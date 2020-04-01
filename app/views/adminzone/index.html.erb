@@ -20,6 +20,9 @@
     <a class="nav-link" id="accounts-tab" data-toggle="tab" href="#accounts" role="tab" aria-controls="accounts" aria-selected="false">Cuentas de celulares</a>
   </li>
   <li class="nav-item">
+    <a class="nav-link" id="telephone-switches-tab" data-toggle="tab" href="#telephone-switches" role="tab" aria-controls="accounts" aria-selected="false">Centrales</a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link" id="form-options-tab" data-toggle="tab" href="#form-options" role="tab" aria-controls="form-options" aria-selected="false">Opciones para formularios</a>
   </li>
 </ul>
@@ -63,6 +66,15 @@
     </div>
 
   </div>
+
+  <div class="tab-pane fade" id="telephone-switches" role="tabpanel" aria-labelledby="telephone-switches-tab">
+    <%= link_to "Nueva central (líneas)", new_telephone_switch_path, remote: :true, class:"btn btn-success" %>
+    <%= render "telephone_switches_table" %>
+    <div class="" id="form-telephone-switch">
+    </div>
+
+  </div>
+
   <div class="tab-pane fade" id="form-options" role="tabpanel" aria-labelledby="form-options-tab">
     <%= link_to "Nueva opción de formulario", new_form_option_path, remote: :true, class:"btn btn-success" %>
     <%= render "form_options_table" %>

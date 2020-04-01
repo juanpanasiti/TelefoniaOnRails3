@@ -1,0 +1,2 @@
+class InternalsController < ApplicationController
+end
