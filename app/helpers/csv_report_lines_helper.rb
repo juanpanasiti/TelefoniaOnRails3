@@ -14,4 +14,12 @@ module CsvReportLinesHelper
       return model.sub(" T","").sub(" LTE","").sub(" NB","")
     end
   end
+
+  def format_device_fullname(model,imei)
+    unless model.empty? || imei.empty?
+      return "#{model} (#{imei})"
+    else
+      return ""
+    end
+  end
 end#module
