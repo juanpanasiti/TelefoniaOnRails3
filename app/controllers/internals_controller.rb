@@ -18,8 +18,9 @@ class InternalsController < ApplicationController
     @internal = Internal.new(internal_params)
     respond_to do |format|
       if @internal.save!
-        flash[:notice] ="Creado exitosamente"
+        flash[:notice] = "Creado exitosamente"
         format.html {redirect_to internals_path}
+        format.js
       else
         flash[:danger] ="Contiene errores"
         format.html {redirect_to internals_path, alert:"ERROR"}

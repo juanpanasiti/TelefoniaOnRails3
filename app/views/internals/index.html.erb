@@ -5,7 +5,7 @@
 <% end %>
 
 <% unless @internals.count == 0 %>
-<table class="table table-stripped table-hover table-dark">
+<table class="table table-stripped table-hover table-dark" id="internals-table">
   <thead>
     <th>Nombre</th>
     <th>Número</th>
@@ -15,25 +15,7 @@
     <th>Opciones</th>
   </thead>
   <tbody>
-    <% @internals.each do |i| %>
-    <tr>
-      <td class="align-middle"><%= i.get_name %></td>
-      <td class="align-middle"><%= i.get_number %></td>
-      <td class="align-middle"><%= i.get_office %></td>
-      <td class="align-middle"><%= i.get_kind %></td>
-      <td class="align-middle"><%= i.get_telephone_switch %></td>
-      <td class="align-middle">
-        <% if current_admin.can_create? %>
-        <%= render "shared/buttons/edit_button_simple",
-              link_url: edit_internal_path(i),
-              link_icon: "fas fa-edit",
-              link_text: "",
-              link_class: "btn btn-warning",
-              link_remote: :true %>
-        <% end %>
-      </td>
-    </tr>
-    <% end %>
+    <%= render @internals %>
   </tbody>
 </table>
 <% else %>

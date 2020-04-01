@@ -1,0 +1,17 @@
+<tr>
+  <td class="align-middle"><%= internal.get_name %></td>
+  <td class="align-middle"><%= internal.get_number %></td>
+  <td class="align-middle"><%= internal.get_office %></td>
+  <td class="align-middle"><%= internal.get_kind %></td>
+  <td class="align-middle"><%= internal.get_telephone_switch %></td>
+  <td class="align-middle">
+    <% if current_admin.can_create? %>
+    <%= render "shared/buttons/edit_button_simple",
+          link_url: edit_internal_path(internal),
+          link_icon: "fas fa-edit",
+          link_text: "",
+          link_class: "btn btn-warning",
+          link_remote: :true %>
+    <% end %>
+  </td>
+</tr>
