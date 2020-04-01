@@ -1,20 +1,29 @@
 <h1><%=  @report.get_account %> <small> <%= @report.get_date %> </small> </h1>
-<%= @table_head[0] %>
 <table class="table table-stripped table-hover table-dark">
   <thead>
-    <% @table_head.each do |col| %>
-    <th><%= col %></th>
-    <% end %>
+
+    <th><%= @table_head[0] %></th>
+    <th><%= @table_head[1] %></th>
+    <th><%= @table_head[4] %></th>
+    <th><%= @table_head[5] %></th>
+    <th><%= @table_head[7] %></th>
+    <th><%= @table_head[6] %></th>
+    <th><%= @table_head[8] %></th>
+
     <th>Acciones</th>
   </thead>
   <tbody>
     <% @table_body.each do |row| %>
     <tr>
-      <% row.each do |cell| %>
-      <td class="align-middle"><%= cell %></td>
-      <% end %>
+      <td class="align-middle"><%= row[0] %></td>
+      <td class="align-middle">?</td>
+      <td class="align-middle"><%= truncate_last(row[4],6) %></td>
+      <td class="align-middle"><%= truncate_last(row[5],5) %></td>
+      <td class="align-middle"><%= format_device_name row[7] %></td>
+      <td class="align-middle"><%= truncate_last(row[6],5) %></td>
+      <td class="align-middle"><%= format_device_name row[8] %></td>
+      <td class="align-middle">**</td>
     </tr>
     <% end %>
-    <td class="align-middle"></td>
   </tbody>
 </table>
