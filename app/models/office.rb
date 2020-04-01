@@ -10,8 +10,8 @@ class Office < ApplicationRecord
   ############ VALIDATIONS
   validates :name, presence:true
   validates :category, presence:true
-  ############ CALLBACKS
-
+  ############ SCOPES
+  scope :roots, -> { where(office_id: nil) }
   ############ METHODS
   def get_fullname
     return "#{self.category.titleize} #{self.name.titleize}"
@@ -51,7 +51,31 @@ class Office < ApplicationRecord
     total_lines = office_lines + suboffices_lines
     return "#{total_lines} (#{office_lines} + #{suboffices_lines})"
   end#get_count_lines
+
+  def get_suboffices
+    suboffices = []
+    self.offices.each do |office|
+      suboffices << office
+      office.get_suboffices.each do |suboffice|
+        suboffices << suboffice
+      end
+    end
+    return suboffices
+  end#get_suboffices
+
   ############ CLASS METHODS
+  def self.get_ordered_by_organization_chart
+    roots = Office.roots
+    offices = []
+    roots.each do |office|
+      offices << office
+      office.get_suboffices.each do |suboffice|
+        offices << suboffice
+      end
+    end
+    return offices
+  end#ordered_by_organization_chart
+
   def self.get_category_options
     return FormOption.get_options_for("office_category")
   end#get_category_options
