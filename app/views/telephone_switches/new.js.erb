@@ -1,0 +1,3 @@
+$('#form-telephone-switch').html("<%= j (render 'form', telephone_switch:@telephone_switch, url:telephone_switches_path, method:'POST')%>");
+$('#form-telephone-switch-modal').modal('show')
+$('#form-telephone-switch').slideDown(350)

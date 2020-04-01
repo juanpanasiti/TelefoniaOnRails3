@@ -1,0 +1,29 @@
+<table class="table table-hover table-stripped table-dark">
+  <thead>
+    <th>Nombre</th>
+    <th>Cabecera</th>
+    <th>Internos</th>
+    <th>IP</th>
+
+    <th>Opciones</th>
+  </thead>
+  <tbody>
+    <% @telephone_switches.each do |ts| %>
+    <tr>
+      <td class="align-middle"><%= ts.get_name %></td>
+      <td class="align-middle"><%= ts.get_header %></td>
+      <td class="align-middle"><%= ts.count_internals %></td>
+      <td class="align-middle"><%= ts.get_ip %></td>
+
+      <td class="align-middle">
+        <%= render "shared/buttons/edit_button_simple",
+              link_url: edit_telephone_switch_path(ts),
+              link_icon: "fas fa-edit",
+              link_text: "",
+              link_class: "btn btn-warning",
+              link_remote: :true %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

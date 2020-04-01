@@ -8,5 +8,7 @@ class AdminzoneController < ApplicationController
     @device_models = DeviceModel.all
     @line_statuses = FormOption.get_options_for('line_status')
     @reports = CsvReportLine.all
+    @telephone_switches = TelephoneSwitch.all
+    @internals = Internal.all
   end
 end
