@@ -1,7 +1,7 @@
 <tr>
   <td class="align-middle"><%= office.get_fullname %></td>
   <td class="align-middle"><%= office.get_father_fullname %></td>
-  <td class="align-middle">#</td>
+  <td class="align-middle"><%= office.get_count_lines %></td>
   <td class="align-middle">
     <%= render "shared/buttons/edit_button_simple",
           link_url: edit_office_path(office),
