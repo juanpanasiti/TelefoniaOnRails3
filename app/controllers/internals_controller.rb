@@ -8,6 +8,7 @@ class InternalsController < ApplicationController
 
   def new
     @internal = Internal.new
+    @internal.publishable = true
     respond_to do |format|
       format.js
     end
@@ -57,7 +58,7 @@ class InternalsController < ApplicationController
   end
 
   def internal_params
-    params.require(:internal).permit(:name, :number, :kind, :office_id, :telephone_switch_id)
+    params.require(:internal).permit(:name, :number, :kind, :publishable, :office_id, :telephone_switch_id)
   end
 
   def set_form_options

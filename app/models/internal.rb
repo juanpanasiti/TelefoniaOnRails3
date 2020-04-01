@@ -4,6 +4,7 @@ class Internal < ApplicationRecord
   #t.string "office_id"
   #t.string "kind"
   #t.string "telephone_switch_id"
+  #t.boolean "publishable"
   ########### RELATIONS
   belongs_to :telephone_switch
   belongs_to :office
@@ -31,6 +32,10 @@ class Internal < ApplicationRecord
   def get_telephone_switch
     return self.telephone_switch.get_name
   end#get_telephone_switch
+
+  def publishable?
+    return self.publishable
+  end
 
   ########### CLASS METHODS
   def self.get_kind_options
