@@ -1,4 +1,4 @@
-<table class="table table-hover table-stripped table-dark">
+<table class="table table-hover table-stripped table-dark" id="offices-table">
   <thead>
     <th>Nombre</th>
     <th>Pertenece a</th>
@@ -6,20 +6,6 @@
     <th>Opciones</th>
   </thead>
   <tbody>
-    <% @offices.each do |o| %>
-    <tr>
-      <td class="align-middle"><%= o.get_fullname %></td>
-      <td class="align-middle"><%= o.get_father_fullname %></td>
-      <td class="align-middle">#</td>
-      <td class="align-middle">
-        <%= render "shared/buttons/edit_button_simple",
-              link_url: edit_office_path(o),
-              link_icon: "fas fa-edit",
-              link_text: "",
-              link_class: "btn btn-warning",
-              link_remote: :true %>
-      </td>
-    </tr>
-    <% end %>
+    <%= render partial: 'offices/office', collection: @offices %>
   </tbody>
 </table>

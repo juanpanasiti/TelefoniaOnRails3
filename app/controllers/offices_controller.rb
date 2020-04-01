@@ -14,6 +14,7 @@ class OfficesController < ApplicationController
     respond_to do |format|
       if @office.save!
         flash[:notice] ="Creado exitosamente"
+        format.js
         format.html { redirect_to adminzone_index_path}
         #format.json { render :show, status: :created, location: @form_option }
       else

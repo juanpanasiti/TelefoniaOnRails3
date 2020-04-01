@@ -1,0 +1,13 @@
+<tr>
+  <td class="align-middle"><%= office.get_fullname %></td>
+  <td class="align-middle"><%= office.get_father_fullname %></td>
+  <td class="align-middle">#</td>
+  <td class="align-middle">
+    <%= render "shared/buttons/edit_button_simple",
+          link_url: edit_office_path(office),
+          link_icon: "fas fa-edit",
+          link_text: "",
+          link_class: "btn btn-warning",
+          link_remote: :true %>
+  </td>
+</tr>
