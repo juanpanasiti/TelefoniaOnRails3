@@ -1,4 +1,4 @@
-<table class="table table-hover table-stripped table-dark">
+<table class="table table-hover table-stripped table-dark" id="telephone-switches-table">
   <thead>
     <th>Nombre</th>
     <th>Cabecera</th>
@@ -8,22 +8,6 @@
     <th>Opciones</th>
   </thead>
   <tbody>
-    <% @telephone_switches.each do |ts| %>
-    <tr>
-      <td class="align-middle"><%= ts.get_name %></td>
-      <td class="align-middle"><%= ts.get_header %></td>
-      <td class="align-middle"><%= ts.count_internals %></td>
-      <td class="align-middle"><%= ts.get_ip %></td>
-
-      <td class="align-middle">
-        <%= render "shared/buttons/edit_button_simple",
-              link_url: edit_telephone_switch_path(ts),
-              link_icon: "fas fa-edit",
-              link_text: "",
-              link_class: "btn btn-warning",
-              link_remote: :true %>
-      </td>
-    </tr>
-    <% end %>
+    <%= render partial: 'telephone_switches/telephone_switch', collection: @telephone_switches %>
   </tbody>
 </table>

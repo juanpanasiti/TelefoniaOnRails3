@@ -1,0 +1,15 @@
+<tr>
+  <td class="align-middle"><%= telephone_switch.get_name %></td>
+  <td class="align-middle"><%= telephone_switch.get_header %></td>
+  <td class="align-middle"><%= telephone_switch.count_internals %></td>
+  <td class="align-middle"><%= telephone_switch.get_ip %></td>
+
+  <td class="align-middle">
+    <%= render "shared/buttons/edit_button_simple",
+          link_url: edit_telephone_switch_path(telephone_switch),
+          link_icon: "fas fa-edit",
+          link_text: "",
+          link_class: "btn btn-warning",
+          link_remote: :true %>
+  </td>
+</tr>
