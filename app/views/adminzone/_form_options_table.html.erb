@@ -1,4 +1,4 @@
-<table class="table table-hover table-stripped table-dark">
+<table class="table table-hover table-stripped table-dark" id="form-options-table">
   <thead>
     <th>Entidad</th>
     <th>Campo</th>
@@ -6,20 +6,6 @@
     <th>Opciones</th>
   </thead>
   <tbody>
-    <% @form_options.each do |fo| %>
-    <tr>
-      <td class="align-middle"><%= fo.get_entity_name %></td>
-      <td class="align-middle"><%= fo.get_field_name %></td>
-      <td class="align-middle"><%= fo.get_value %></td>
-      <td class="align-middle">
-        <%= render "shared/buttons/edit_button_simple",
-              link_url: edit_form_option_path(fo),
-              link_icon: "fas fa-edit",
-              link_text: "",
-              link_class: "btn btn-warning",
-              link_remote: :true %>
-      </td>
-    </tr>
-    <% end %>
+    <%= render partial: 'form_options/form_option', collection: @form_options %>
   </tbody>
 </table>

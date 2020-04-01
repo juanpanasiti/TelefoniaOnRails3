@@ -1,0 +1,13 @@
+<tr>
+  <td class="align-middle"><%= form_option.get_entity_name %></td>
+  <td class="align-middle"><%= form_option.get_field_name %></td>
+  <td class="align-middle"><%= form_option.get_value %></td>
+  <td class="align-middle">
+    <%= render "shared/buttons/edit_button_simple",
+          link_url: edit_form_option_path(form_option),
+          link_icon: "fas fa-edit",
+          link_text: "",
+          link_class: "btn btn-warning",
+          link_remote: :true %>
+  </td>
+</tr>

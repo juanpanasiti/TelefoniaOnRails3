@@ -16,6 +16,7 @@ class FormOptionsController < ApplicationController
       if @form_option.save
         flash[:notice] ="Creado exitosamente"
         format.html { redirect_to adminzone_index_path}
+        format.js
         #format.json { render :show, status: :created, location: @form_option }
       else
         flash[:danger] ="Contiene errores"
