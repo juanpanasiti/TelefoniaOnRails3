@@ -4,6 +4,8 @@ class TelephoneSwitch < ApplicationRecord
   ############ VALIDATIONS
   validates :name, presence:true
   validates :name, uniqueness:true
+  ############ SCOPES
+
   ############ METHODS
   def get_name
     return self.name
@@ -19,7 +21,19 @@ class TelephoneSwitch < ApplicationRecord
 
   def count_internals
     count = "X (Ya - Zd)"
-    #count = "#{self.internals.count} (#{self.internals.analogue.count}a - #{self.internals.digital.count})"
+    internals = Internal.by_telephone_switch(self.id)
+    total_count = internals.count
+    partial_counts = []
+    count = "#{total_count} ("
+
+    kinds = Internal.get_kind_options
+    kinds.each do |kind|
+      count += "#{internals.by_kind(kind).count}#{kind[0]}"
+      unless kind == kinds.last
+        count += " + "
+      end
+    end
+    count += ")"
     return count
   end
   ############ CLASS METHODS

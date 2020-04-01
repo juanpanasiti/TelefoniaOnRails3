@@ -11,7 +11,9 @@ class Internal < ApplicationRecord
   ########### VALIDATIONS
   validates :name, presence: true
   validates :number, presence: true
-
+  ########### METHODS
+  scope :by_kind, ->(kind) { where(kind: kind) }
+  scope :by_telephone_switch, ->(id) { where(telephone_switch_id: id) }
   ########### METHODS
   def get_name
     return self.name
