@@ -1,0 +1,3 @@
+$('#form-internal').html("<%= j (render 'form', internal:@internal, url:internals_path, method:'POST')%>");
+$('#form-internal-modal').modal('show')
+$('#form-internal').slideDown(350)

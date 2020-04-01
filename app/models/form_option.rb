@@ -34,6 +34,8 @@ class FormOption < ApplicationRecord
     options << ["Tipo SIM (Línea)","line_sim"]
     #Office
     options << ["Categoría (Oficina)","office_category"]
+    #Internal
+    options << ["Tipo Línea (Interno)","internal_kind"]
 
     return options
   end#get_fields_options

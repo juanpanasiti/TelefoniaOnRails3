@@ -23,4 +23,11 @@ class TelephoneSwitch < ApplicationRecord
     return count
   end
   ############ CLASS METHODS
+  def self.get_telephone_switch_options
+    options = [["",""]]
+    self.all.each do |ts|
+      options << [ts.get_name,ts.id]
+    end
+    return options
+  end#get_office_options
 end

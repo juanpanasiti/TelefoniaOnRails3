@@ -1,0 +1,53 @@
+<h1><i class="fas fa-phone"></i> Internos Telefónicos</h1>
+
+<% if current_admin.can_create? %>
+  <%= link_to "Nuevo Interno", new_internal_path, remote: :true, class:"btn btn-success" %>
+<% end %>
+
+<% unless @internals.count == 0 %>
+<table class="table table-stripped table-hover table-dark">
+  <thead>
+    <th>Nombre</th>
+    <th>Número</th>
+    <th>Oficina</th>
+    <th>Tipo</th>
+    <th>Central</th>
+    <th>Opciones</th>
+  </thead>
+  <tbody>
+    <% @internals.each do |i| %>
+    <tr>
+      <td class="align-middle"><%= i.get_name %></td>
+      <td class="align-middle"><%= i.get_number %></td>
+      <td class="align-middle"><%= i.get_office %></td>
+      <td class="align-middle"><%= i.get_kind %></td>
+      <td class="align-middle"><%= i.get_telephone_switch %></td>
+      <td class="align-middle">
+        <% if current_admin.can_create? %>
+        <%= render "shared/buttons/edit_button_simple",
+              link_url: edit_internal_path(i),
+              link_icon: "fas fa-edit",
+              link_text: "",
+              link_class: "btn btn-warning",
+              link_remote: :true %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+<div class="alert alert-warning" role="alert">
+  <h4 class="alert-heading">No hay internos cargados!</h4>
+  <p>Un adminsitrador con permisos de acceso debería comenzar a agregarlos.</p>
+  <span class="fa-stack fa-2x">
+  <i class="fas fa-phone-square fa-stack-2x pull-left"></i>
+  <i class="fas fa-plus fa-stack-1x" style="color:Lightgreen"></i>
+</span>
+</div>
+<% end %>
+
+<!-- Experimantal -->
+<div class="" id="form-internal">
+
+</div>

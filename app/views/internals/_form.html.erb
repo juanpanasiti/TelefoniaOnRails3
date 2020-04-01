@@ -1,0 +1,50 @@
+<div class="modal fade" id="form-internal-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Interno Telefónico</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <%= form_with(model: internal, url:url, method:method) do |i| %>
+
+      <div class="modal-body">
+
+        <div class="form-group">
+          <%= i.label :telephone_switch_id, "Central" %>
+          <%= i.select :telephone_switch_id, @telephone_switch_options.map { |option| [option[0],option[1]]  }, {}, {class:"form-control"} %>
+        </div>
+
+        <div class="form-group">
+          <%= i.label :office_id, "Oficina" %>
+          <%= i.select :office_id, @office_options.map { |option| [option[0],option[1]]  }, {}, {class:"form-control"} %>
+        </div>
+
+        <div class="form-group">
+          <%= i.label :name, "Nombre" %>
+          <%= i.text_field :name, class:"form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= i.label :number, "Número" %>
+          <%= i.text_field :number, class:"form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= i.label :kind, "Tipo de línea" %>
+          <%= i.select :kind, @kind_options.map { |val| [val,val]}, {}, {class:"form-control"} %>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <%= i.submit "Guardar", class:"btn btn-primary" %>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>
+</div>
