@@ -8,7 +8,7 @@ class InternalsController < ApplicationController
 
   def new
     @internal = Internal.new
-    @internal.publishable = true
+    #@internal.publishable = true #Error?
     respond_to do |format|
       format.js
     end
