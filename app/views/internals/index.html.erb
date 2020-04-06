@@ -18,6 +18,10 @@
     <%= render @internals %>
   </tbody>
 </table>
+<% if current_admin.can_create? %>
+  <%= link_to "Nuevo Interno", new_internal_path, remote: :true, class:"btn btn-success" %>
+<% end %>
+
 <% else %>
 <div class="alert alert-warning" role="alert">
   <h4 class="alert-heading">No hay internos cargados!</h4>
