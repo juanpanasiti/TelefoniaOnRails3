@@ -12,9 +12,14 @@ class Office < ApplicationRecord
   validates :category, presence:true
   ############ SCOPES
   scope :roots, -> { where(office_id: nil) }
+  scope :sort_by_name, -> { order(category: :asc).order(name: :asc) }
   ############ METHODS
   def get_fullname
-    return "#{self.category.titleize} #{self.name.titleize}"
+    return "#{self.category} #{self.name}"
+  end#get_fullname
+
+  def get_fullname_with_father
+    return "#{self.get_fullname} (#{self.get_father_fullname})"
   end
 
   def get_father
@@ -82,8 +87,8 @@ class Office < ApplicationRecord
 
   def self.get_office_options
     options = [["",""]]
-    self.all.each do |office|
-      options << [office.get_fullname,office.id]
+    self.all.sort_by_name.each do |office|
+      options << [office.get_fullname_with_father,office.id]
     end
     return options
   end#get_office_options
