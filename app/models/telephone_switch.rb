@@ -5,7 +5,7 @@ class TelephoneSwitch < ApplicationRecord
   validates :name, presence:true
   validates :name, uniqueness:true
   ############ SCOPES
-
+  scope :sort_by_name, -> { order(name: :asc) }
   ############ METHODS
   def get_name
     return self.name
@@ -38,8 +38,8 @@ class TelephoneSwitch < ApplicationRecord
   end
   ############ CLASS METHODS
   def self.get_telephone_switch_options
-    options = [["",""]]
-    self.all.each do |ts|
+    options = []
+    self.all.sort_by_name.each do |ts|
       options << [ts.get_name,ts.id]
     end
     return options
