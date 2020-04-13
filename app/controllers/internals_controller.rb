@@ -1,8 +1,10 @@
 class InternalsController < ApplicationController
+  include Pagy::Backend
   before_action :set_internal, only: [:show, :edit, :update, :destroy]
   before_action :set_form_options, only: [:new, :create, :edit, :update]
   def index
-    @internals = Internal.all
+    @pagy, @internals = pagy(Internal.all)
+    #@internals = Internal.all
     @new_internal = Internal.new
   end
 

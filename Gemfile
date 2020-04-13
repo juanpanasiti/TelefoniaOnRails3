@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ADDED GEMs
 gem 'devise', '~> 4.7', '>= 4.7.1' #For authentication
+gem 'pagy', '~> 3.7', '>= 3.7.5' #For Pagination
